@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { topButtonsList } from '../utils/topButtonsList';
 
 const TopButtons = () => {
+    // eslint-disable-next-line no-unused-vars
     const [topBtnsList, setTopBtnsList] = useState(topButtonsList);
     return (
         <div className='pt-4 pb-6 flex gap-x-3.5 top-btn-list'>
