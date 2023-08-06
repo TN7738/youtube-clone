@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import useFetchVideos from '../utils/useFetchVideos';
+import useShuffleVideos from '../utils/useShuffleVideos';
 import VideoCard from './VideoCard';
 import { Link } from 'react-router-dom';
 import LoadingBar from 'react-top-loading-bar';
@@ -8,7 +9,7 @@ import { YOUTUBE_VIDEOS_API } from '../utils/constants';
 const VideoContainer = () => {
     const [videos, setVideos] = useState([]);
     const [progress, setProgress] = useState(20);
-    const videosData = useFetchVideos(YOUTUBE_VIDEOS_API);
+    const videosData = useShuffleVideos(useFetchVideos(YOUTUBE_VIDEOS_API));
     const shimmerTiles = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
     useEffect(() => {
