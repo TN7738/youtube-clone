@@ -19,7 +19,7 @@ const SearchResultPage = () => {
                 <TopButtons/>
                 <div className='overflow-y-auto h-[88.3%]'>
                 {
-                    videos.map(video => <Link to={'/watch?v=' + video.id.videoId} key={video.id.videoId} className='mb-5 block'><SuggestionVideoCard thumbnail={video.snippet.thumbnails.medium.url} title={video.snippet.title} channelTitle={video.snippet.channelTitle} publishedAt={video.snippet.publishedAt} description={video.snippet.description} /></Link>)
+                    videos.map((video, i) => <Link to={'/watch?v=' + video.id.videoId} key={video.id.videoId + i} className='mb-5 block'><SuggestionVideoCard thumbnail={video.snippet.thumbnails.medium.url} title={video.snippet.title} channelTitle={video.snippet.channelTitle} publishedAt={video.snippet.publishedAt} description={video.snippet.description} /></Link>)
                 }
             </div>
         </div>
